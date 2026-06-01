@@ -1,0 +1,88 @@
+/* ── CSS VARIABLES ── */
+:root {
+  --cream:  #f5f0e8;
+  --cream2: #ede7d9;
+  --paper:  #faf7f2;
+  --ink:    #1a1410;
+  --ink2:   #3d3530;
+  --ink3:   #7a6f66;
+  --rust:   #b5431a;
+  --gold:   #c8973a;
+  --rule:   #c8bfb0;
+  --ff-d:   'Playfair Display', Georgia, serif;
+  --ff-b:   'DM Sans', sans-serif;
+  --ff-m:   'DM Mono', monospace;
+  --transition: 0.25s ease;
+}
+
+body.dark {
+  --paper:  #14110e;
+  --cream:  #1e1a16;
+  --cream2: #261f19;
+  --ink:    #f0ebe3;
+  --ink2:   #c8bfb0;
+  --ink3:   #8a7f76;
+  --rule:   #3a3028;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--ff-b);
+  background: var(--paper);
+  color: var(--ink);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+  transition: background var(--transition), color var(--transition);
+}
+
+/* ── FADE-IN ANIMATION ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  animation: fadeUp 0.6s ease both;
+}
+
+.fade-up-1 { animation-delay: 0.05s; }
+.fade-up-2 { animation-delay: 0.15s; }
+.fade-up-3 { animation-delay: 0.25s; }
+.fade-up-4 { animation-delay: 0.35s; }
+.fade-up-5 { animation-delay: 0.45s; }
+
+/* ── SECTION SHARED ── */
+section { margin: 88px 0; }
+
+.sec-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 44px;
+}
+
+.sec-num {
+  font-family: var(--ff-m);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  color: var(--rust);
+}
+
+.sec-title {
+  font-family: var(--ff-d);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  section { margin: 56px 0; }
+}

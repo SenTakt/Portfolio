@@ -1,0 +1,111 @@
+.awards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.award-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border: 1px solid var(--rule);
+  background: var(--cream);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+}
+
+.award-card:hover {
+  border-color: var(--rust);
+  transform: translateY(-1px);
+}
+
+.award-card.claimed {
+  border-color: var(--gold);
+  background: var(--cream2);
+}
+
+.award-mark {
+  font-family: var(--ff-d);
+  font-size: 1.5rem;
+  color: var(--gold);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.award-body h5 {
+  font-family: var(--ff-d);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.award-body span {
+  font-family: var(--ff-m);
+  font-size: 0.62rem;
+  color: var(--ink3);
+}
+
+.award-claimed {
+  font-family: var(--ff-m);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-top: 4px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.award-counter {
+  font-family: var(--ff-m);
+  font-size: 0.72rem;
+  color: var(--ink3);
+  margin-top: 16px;
+}
+
+.award-counter span {
+  color: var(--rust);
+  font-weight: bold;
+}
+
+/* ── SPECIAL SKILLS ── */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1px solid var(--rule);
+  font-size: 0.88rem;
+  color: var(--ink2);
+  background: var(--cream);
+  cursor: default;
+  transition: all 0.2s ease;
+}
+
+.pill:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--rust);
+  flex-shrink: 0;
+}
+
+@media (max-width: 860px) {
+  .awards-grid { grid-template-columns: 1fr; }
+}
